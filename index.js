@@ -143,14 +143,14 @@ function handleSearchButtonClick() // function starts
   }
   $('#table').DataTable().destroy(); // Destroy the already initialized earlier version of the pagination table
   renderTable(filtered_data); // Call the rederTable() function to render (display) the table with our filtered dataset (filtered_data)
-  tushaar_pagination(); // Re-initate the pagination table with the new rendered search results
+  pagination(); // Re-initate the pagination table with the new rendered search results
 }
 
 //---------------------------------------------------------------------------------------------
-// SECTION 5 - Pagination function (tushaar_pagination())
+// SECTION 5 - Pagination function (pagination())
 
 // Setting up pagination function - This function is acquired via 'Google Fu :)'
-function tushaar_pagination() 
+function pagination() 
 {
   $(document).ready(function() {
     if ( $.fn.dataTable.isDataTable( '#table' ) ) { // This conditions checks for table being active and bypasses an active table - this is fail safe to remove warning errors
@@ -172,7 +172,7 @@ function tushaar_pagination()
 // Render the 'entire table' for the first time when our web page loads by calling our renderTable function and by passing the 
 // filtered_data parameter
 renderTable(filtered_data);
-tushaar_pagination(); // Initiate the pagination function for the first time the browser page loads
+pagination(); // Initiate the pagination function for the first time the browser page loads
 
 //---------------------------------------------------------------------------------------------
 // End of Code
